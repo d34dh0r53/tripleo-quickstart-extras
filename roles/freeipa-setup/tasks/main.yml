@@ -1,5 +1,11 @@
 ---
 
+- name: Ensure that NSS is updated
+  yum:
+    name: 'nss'
+    state: latest
+  become: yes
+
 - block:
   - name: Set FreeIPA admin password
     set_fact:
